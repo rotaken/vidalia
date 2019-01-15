@@ -41,28 +41,28 @@ public:
   /** Default constructor. */
   RouterDescriptor(bool microdesc = false) : _microdesc(microdesc) {}
   /** Constructor. */
-  RouterDescriptor(QStringList descriptor, bool microdesc = false);
+  RouterDescriptor(const QStringList& descriptor, bool microdesc = false);
 
   /** Returns the router's name. */
-  QString name() const { return _name; }
+  const QString& name() const { return _name; }
   /** Returns the router's IP address. */
-  QHostAddress ip() const { return _ip; }
+  const QHostAddress& ip() const { return _ip; }
   /** Returns the router's ORPort. */
   quint16 orPort() const { return _orPort; }
   /** Returns the router's DirPort. */
   quint16 dirPort() const { return _dirPort; }
   /** Returns the router's ID. */
-  QString id() const { return _id; }
+  const QString& id() const { return _id; }
   /** Returns the platform on which this router is running. */
-  QString platform() const { return _platform; }
+  const QString& platform() const { return _platform; }
   /** Returns the length of time this router has been up. */
   quint64 uptime() const { return _uptime; }
   /** Returns the router's contact information. */
-  QString contact() const { return _contact; }
+  const QString& contact() const { return _contact; }
   /** Returns the date and time the router was published. */
-  QDateTime published() const { return _published; }
+  const QDateTime& published() const { return _published; }
   /** Returns the fingerprint for this router. */
-  QString fingerprint() const { return _fingerprint; }
+  const QString& fingerprint() const { return _fingerprint; }
   /** Returns the average bandwidth for this router. */
   quint64 averageBandwidth() const { return _avgBandwidth; }
   /** Returns the burst bandwidth for this router. */
@@ -83,19 +83,19 @@ public:
   /** Returns geographic location information for this router. Note that this
    * information is NOT part of the Tor directory protocol, but can be
    * determined out of band and set using setLocation(). */
-  QString location() const { return _location; }
+  const QString& location() const { return _location; }
   /** Sets geographic location information for this router. */
-  void setLocation(QString location) { _location = location; }
+  void setLocation(const QString& location) { _location = location; }
   /** Sets the descriptors status to Offline if <b>offline</b> is true. */
   void setOffline(bool offline) { _status = (offline ? Offline : Online); }
 
   /** Microdescriptor */
   /** Returns the onion key for this router */
-  QString onionKey() const { return _onionKey; }
+  const QString& onionKey() const { return _onionKey; }
   /** Returns this router's family */
-  QString family() const { return _family; }
+  const QString& family() const { return _family; }
   /** Returns this router's exit policy */
-  QString exitPolicy() const { return _exitPolicy; }
+  const QString& exitPolicy() const { return _exitPolicy; }
 
   /** Uses the RouterStatus information to update key elements of the
    *  descriptor */
@@ -106,7 +106,7 @@ public:
 
 private:
   /** Parses this router's descriptor for relevant information. */
-  void parseDescriptor(QStringList descriptor);
+  void parseDescriptor(const QStringList& descriptor);
 
   RouterStatusEnum _status;/**< Availability status of this router. */
   QString _id;             /**< Router's descriptor ID. */

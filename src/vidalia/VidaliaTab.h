@@ -68,7 +68,7 @@ protected:
 
   virtual void closeEvent(QCloseEvent *event);
 
-  bool _onTop; /**< True if the current tab is the one being displayed */
+  bool _onTop = false; /**< True if the current tab is the one being displayed */
 
 private:
   QString _title; /**< Title displayed in the tab */
