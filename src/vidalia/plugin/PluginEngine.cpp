@@ -186,11 +186,7 @@ PluginEngine::sleep(QScriptContext *context, QScriptEngine *engine)
 
   int s = context->argument(1).toInt32();
 
-#if defined(Q_OS_WIN)
-  Sleep(s*1000);
-#else
-  (void)::sleep(s);
-#endif
+  QThread::msleep(s * 1000);
 
   return engine->nullValue();
 }
