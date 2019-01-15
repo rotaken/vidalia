@@ -39,7 +39,7 @@ set(CMAKE_AUTOUIC ON)
 ## to always look for includes there:
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-option(USE_QT5 "Build Vidalia using Qt5")
+option(USE_QT5 "Build Vidalia using Qt5" ON)
 
 ## We declare this option here, because it determines the minimum
 ## required Qt version
@@ -132,7 +132,7 @@ endif(APPLE)
 option(WIN2K "Enable Windows 2k support." OFF)
 
 ## UPnP support is currently optional (enabled by default)
-option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
+option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." OFF)
 
 ## Crash reporting via Google Breakpad is optional (disabled by default)
 option(USE_BREAKPAD "Enable Google Breakpad crash reporting." OFF)

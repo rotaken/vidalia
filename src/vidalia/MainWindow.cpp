@@ -843,11 +843,12 @@ MainWindow::connectToTor()
     while((!file.open(QIODevice::ReadOnly | QIODevice::Text)) &&
           (tries++ < maxtries)) {
       vWarn(QString("This is try number: %1.").arg(tries));
-#if defined(Q_OS_WIN)
+      // sleep is for shit-coders
+/*#if defined(Q_OS_WIN)
       Sleep(1000);
 #else
       sleep(1);
-#endif
+#endif*/
       QCoreApplication::processEvents();
     }
 

@@ -239,6 +239,14 @@ VidaliaNativeEventFilter::nativeEventFilter(const QByteArray& /*eventType*/, voi
   return false;
 #endif
 }
+#else
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+bool
+VidaliaNativeEventFilter::nativeEventFilter(const QByteArray&, void*, long*)
+{
+    return false;
+}
+#endif
 #endif
 
 /** Returns true if the user wants to see usage information. */
